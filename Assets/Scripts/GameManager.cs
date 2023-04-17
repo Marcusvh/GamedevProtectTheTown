@@ -164,7 +164,7 @@ public class GameManager : MonoBehaviour
             Player.SetLevel(GetCurrentLevel());
 
         // change weapon lvl
-        weapon.SetWeaponLevel(int.Parse(data[3]));
+        weapon.SetWeaponLevel(int.Parse(data[0]));
     }
 
 }

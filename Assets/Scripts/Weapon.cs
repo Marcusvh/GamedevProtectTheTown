@@ -16,7 +16,7 @@ public class Weapon : Collidable
 
     // swing
     private Animator anim;
-    private float Cooldown = 0.5f;
+    private float Cooldown = 0.4f;
     private float LastSwing;
 
     protected override void Start()
