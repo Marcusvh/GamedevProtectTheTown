@@ -8,6 +8,14 @@ public class Boss : Enemy
     public float distance = 0.25f;
     public Transform[] fireballs;
 
+    private void Start()
+    {
+        base.Start();
+
+        hitpoint = Portal.newBossHealth;
+        maxHitpoint = Portal.newBossHealth;
+    }
+
     private void Update()
     {
         for (int i = 0; i < fireballSpeed.Length; i++)
