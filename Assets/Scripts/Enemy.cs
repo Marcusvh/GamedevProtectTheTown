@@ -14,8 +14,12 @@ public class Enemy : Mover
     public float chaseLenght = 1;
     private bool chasing;
     private bool collidingWithPlayer;
+
+    // positioning
     private Transform playerTransform;
     private Vector3 startingPosition;
+
+    // Sound
     private float lastPlayed;
     private float playTime = 0.2f;
     [SerializeField]
@@ -27,6 +31,8 @@ public class Enemy : Mover
     private BoxCollider2D hitbox;
     private Collider2D[] hits = new Collider2D[10];
 
+    // animaton
+    private Animator animator;
     protected override void ReceiveDamage(Damage dmg)
     {
         if (Time.time - lastPlayed > playTime)
@@ -38,8 +44,6 @@ public class Enemy : Mover
         base.ReceiveDamage(dmg);
     }
 
-    // animaton
-    private Animator animator;
 
     protected override void Start()
     {
