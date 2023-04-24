@@ -13,6 +13,7 @@ public class EnemyHitbox : Collidable
         if(coll.tag == "Fighter" && coll.name == "Player")
         {
             // create new damage object before sending it to the player
+
             Damage dmg = new Damage()
             {
                 damageAmount = damage,

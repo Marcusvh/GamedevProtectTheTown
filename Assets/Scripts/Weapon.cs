@@ -9,6 +9,8 @@ public class Weapon : Collidable
 
     public int[] DamagePoint = { 1, 2, 3, 4, 5, 6, 7, 8 };
     public float[] pushForce = { 2.0f, 2.2f, 2.5f, 2.7f, 3.0f, 3.2f, 3.5f, 3.8f };
+    [SerializeField]
+    public AudioSource audioSource;
 
     // upgrade
     public int Weapondlevel = 0;
@@ -58,6 +60,7 @@ public class Weapon : Collidable
 
     private void Swing()
     {
+        audioSource.PlayOneShot(audioSource.clip, 1);
         anim.SetTrigger("Swing");
     }
     public void UpgradeWeapon()

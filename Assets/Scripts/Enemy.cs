@@ -14,11 +14,26 @@ public class Enemy : Mover
     private bool collidingWithPlayer;
     private Transform playerTransform;
     private Vector3 startingPosition;
+    private float lastPlayed;
+    private float playTime = 0.2f;
+    [SerializeField]
+    public AudioSource audioSource;
 
     // hitbox
     public ContactFilter2D filter;
     private BoxCollider2D hitbox;
     private Collider2D[] hits = new Collider2D[10];
+
+    protected override void ReceiveDamage(Damage dmg)
+    {
+        if (Time.time - lastPlayed > playTime)
+        {
+            audioSource.PlayOneShot(audioSource.clip, 1);
+            lastPlayed = Time.time;
+        }
+
+        base.ReceiveDamage(dmg);
+    }
 
     protected override void Start()
     {
