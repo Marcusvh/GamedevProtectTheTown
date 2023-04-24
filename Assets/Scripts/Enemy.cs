@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Enemy : Mover
@@ -14,11 +16,15 @@ public class Enemy : Mover
     private bool collidingWithPlayer;
     private Transform playerTransform;
     private Vector3 startingPosition;
+    private GameObject boss;
 
     // hitbox
     public ContactFilter2D filter;
     private BoxCollider2D hitbox;
     private Collider2D[] hits = new Collider2D[10];
+
+    // animaton
+    private Animator animator;
 
     protected override void Start()
     {
@@ -27,6 +33,8 @@ public class Enemy : Mover
         startingPosition = transform.position;
         hitbox = transform.GetChild(0).GetComponent<BoxCollider2D>();
 
+        animator = GetComponent<Animator>();
+        boss = GameObject.Find("boss_0");
     }
     private void FixedUpdate()
     {
@@ -69,7 +77,23 @@ public class Enemy : Mover
 
     protected override void Death()
     {
-        Destroy(gameObject);
+        if (gameObject.name == "boss_0")
+        {          
+            int childs = boss.transform.childCount;
+            for (int i = childs - 1; i >= 0; i--)
+            {
+                Destroy(boss.transform.GetChild(i).gameObject);
+            }
+            boss.GetComponent<BoxCollider2D>().enabled = false;
+        }
+
+        chasing = false;
+        triggerLenght = 0.000f;
+        chaseLenght = 0.000f;
+        xSpeed = 0;
+        ySpeed = 0;
+        hitbox.enabled = false;
+        animator.SetTrigger("Death");
         GameManager.instance.GrantXp(xpValue);
         GameManager.instance.Showtext("+" + xpValue + " XP", 30, Color.green, transform.position, Vector3.up, 1.0f);
     }

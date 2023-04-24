@@ -18,10 +18,24 @@ public class Boss : Enemy
 
     private void Update()
     {
-        for (int i = 0; i < fireballSpeed.Length; i++)
+        if(fireballSpeed.Length > 0 && fireballs.Length > 0)
         {
-            fireballs[i].position = transform.position + new Vector3(-Mathf.Cos(Time.time * fireballSpeed[i]) * distance,
-                Mathf.Sin(Time.time * fireballSpeed[i]) * distance, 0);
+            for (int i = 0; i < fireballSpeed.Length; i++)
+            {
+                Vector3 spinningDudesPosition = new Vector3(-Mathf.Cos(Time.time * fireballSpeed[i]) * distance,
+                    Mathf.Sin(Time.time * fireballSpeed[i]) * distance, 0);
+
+                if (fireballs[i] == null || fireballs.Length == 0)
+                {
+                    Destroy(GetComponent<Boss>());
+                    return;
+                }
+                else
+                {
+                    fireballs[i].position = transform.position + spinningDudesPosition;
+                }
+            }
         }
+        
     }
 }

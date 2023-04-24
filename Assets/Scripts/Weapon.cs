@@ -52,7 +52,7 @@ public class Weapon : Collidable
                 origin = transform.position,
                 pushForce = pushForce[Weapondlevel]
             };
-            coll.SendMessage("ReceiveDamage", dmg);
+            coll.SendMessage("ReceiveDamage", dmg, SendMessageOptions.DontRequireReceiver);
         }
     }
 
