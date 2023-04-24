@@ -6,10 +6,13 @@ public class Chest : Collectable
 {
     public Sprite emptyChest;
     public int currencyAmount = 10;
+    [SerializeField]
+    public AudioSource audioSource;
     protected override void OnCollect()
     {
         if (!collected)
         {
+            audioSource.PlayOneShot(audioSource.clip, 10);
             collected = true;
             GetComponent<SpriteRenderer>().sprite = emptyChest;
             GameManager.instance.Currency += currencyAmount;

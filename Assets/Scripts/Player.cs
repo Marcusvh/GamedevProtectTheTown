@@ -4,10 +4,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
+
 public class Player : Mover
 {
     private SpriteRenderer spriteRenderer;
     private bool isAlive = true;
+    private float lastPlayed;
+    private float playTime = 1.0f;
+    [SerializeField]
+    public AudioSource audioSource;
+
     protected override void Start()
     {
         base.Start();
@@ -17,6 +23,12 @@ public class Player : Mover
     protected override void ReceiveDamage(Damage dmg)
     {
         if (!isAlive) return;
+
+        if (Time.time - lastPlayed > playTime)
+        {
+            audioSource.PlayOneShot(audioSource.clip, 1);
+            lastPlayed = Time.time;
+        }
 
         base.ReceiveDamage(dmg);
         GameManager.instance.OnHitpointChange();
