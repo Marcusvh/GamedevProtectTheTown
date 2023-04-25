@@ -24321,15 +24321,15 @@ PrefabInstance:
     - target: {fileID: 4525583160451893949, guid: 64c4363d3050a8441b845b4e5b4314d5, type: 3}
       propertyPath: newCtr.Array.data[0]
       value: 
-      objectReference: {fileID: 9100000, guid: e21549c44280b1f4bb41ffbb07dda2f4, type: 2}
+      objectReference: {fileID: 9100000, guid: 227f337a958df8740889260671933350, type: 2}
     - target: {fileID: 4525583160451893949, guid: 64c4363d3050a8441b845b4e5b4314d5, type: 3}
       propertyPath: newCtr.Array.data[1]
       value: 
-      objectReference: {fileID: 9100000, guid: 0ee60f77172a23c4396e94d591bc00ba, type: 2}
+      objectReference: {fileID: 9100000, guid: 449f029bdf0f4c44b8a9af0eac12b0d2, type: 2}
     - target: {fileID: 4525583160451893949, guid: 64c4363d3050a8441b845b4e5b4314d5, type: 3}
       propertyPath: newCtr.Array.data[2]
       value: 
-      objectReference: {fileID: 9100000, guid: 5e20f44d87b9d5c469bfb8d8606670b3, type: 2}
+      objectReference: {fileID: 9100000, guid: d7613614cf9a3c1429e9a145526722dd, type: 2}
     - target: {fileID: 4525583160451893950, guid: 64c4363d3050a8441b845b4e5b4314d5, type: 3}
       propertyPath: m_Name
       value: Player
@@ -24463,7 +24463,7 @@ Animator:
   m_GameObject: {fileID: 4525583160765292296}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d7613614cf9a3c1429e9a145526722dd, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
