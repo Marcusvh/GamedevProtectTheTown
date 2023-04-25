@@ -17,11 +17,17 @@ public class Player : Mover
     [SerializeField]
     public AudioSource audioSource;
 
+    private Animator anim;
+
+    // For changing animation controller. must be the same order as in the charactor menu.
+    public List<RuntimeAnimatorController> newCtr;
+
     protected override void Start()
     {
         animator = GetComponent<Animator>();
         base.Start();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
     }
 
     protected override void ReceiveDamage(Damage dmg)
@@ -72,10 +78,25 @@ public class Player : Mover
         GameManager.instance.Showtext("+ " + healingAmount + " HP", 25, Color.magenta, transform.position, Vector3.up * 30, 1.0f);
         GameManager.instance.OnHitpointChange();
     }
-
+    
     internal void SwapSprite(int skinID)
     {
         spriteRenderer.sprite = GameManager.instance.PlayerSprites[skinID];
+        Debug.Log("Switch:" + GameManager.instance.PlayerSprites[skinID].name);
+        switch (GameManager.instance.PlayerSprites[skinID].name)
+        {
+            case "Player_Knight_Idle_0": anim.runtimeAnimatorController = newCtr[0];
+                    //Resources.Load("Assets/Artwork/Animations/Player/Player_Knight.controller") as RuntimeAnimatorController;
+                break;
+
+            case "Player_Rogue_Idle_0": anim.runtimeAnimatorController = newCtr[1];
+                    //Resources.Load("Assets/Artwork/Animations/Player/Player_Rogue.controller") as RuntimeAnimatorController;
+                break;
+
+            case "Player_Wizard_Idle_0": anim.runtimeAnimatorController = newCtr[2];
+                    //Resources.Load("Assets/Artwork/Animations/Player/Player_Wizard.controller") as RuntimeAnimatorController;
+                break;
+        }
     }
     public void OnLevelUp()
     {

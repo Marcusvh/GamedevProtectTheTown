@@ -64,6 +64,7 @@ public class Enemy : Mover
            
             if(chasing)
             {
+                animator.SetBool("Run", true);
                 if(!collidingWithPlayer)
                 {
                     UpdateMoter((playerTransform.position - transform.position).normalized);
@@ -78,6 +79,7 @@ public class Enemy : Mover
         {
             UpdateMoter(startingPosition - transform.position);
             chasing = false;
+            animator.SetBool("Run", false);
         }
 
         // check for overlaps
