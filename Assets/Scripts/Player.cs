@@ -56,10 +56,15 @@ public class Player : Mover
         float y = Input.GetAxisRaw("Vertical");
         if(x > 0  || y > 0 || x < 0 || y < 0)
         {
-            animator.SetBool("Run", true);
+            // nisser har ikke animation
+            if(anim.runtimeAnimatorController != null)
+                animator.SetBool("Run", true);
         }
         else
-        { animator.SetBool("Run", false);
+        {
+            // nisser har ikke animation
+            if (anim.runtimeAnimatorController != null)
+                animator.SetBool("Run", false);
         }
         if(isAlive)
             UpdateMoter(new Vector3(x, y, 0));
@@ -82,9 +87,11 @@ public class Player : Mover
     internal void SwapSprite(int skinID)
     {
         spriteRenderer.sprite = GameManager.instance.PlayerSprites[skinID];
-        Debug.Log("Switch:" + GameManager.instance.PlayerSprites[skinID].name);
+        
         switch (GameManager.instance.PlayerSprites[skinID].name)
         {
+            case "Player_0": anim.runtimeAnimatorController = null; break;
+            case "Player_1": anim.runtimeAnimatorController = null; break;
             case "Player_Knight_Idle_0": anim.runtimeAnimatorController = newCtr[0];
                     //Resources.Load("Assets/Artwork/Animations/Player/Player_Knight.controller") as RuntimeAnimatorController;
                 break;

@@ -20094,7 +20094,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 4355180666568580090, guid: cd034108d061fae4fa323a1968e30d11, type: 3}
+  m_Sprite: {fileID: 419607515, guid: ec4a5da99f4e71f4194b123cab946667, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -20783,11 +20783,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerSprites:
+  - {fileID: 419607515, guid: ec4a5da99f4e71f4194b123cab946667, type: 3}
+  - {fileID: 1961500227, guid: c6de83af687004846a5e11cd5d09f021, type: 3}
   - {fileID: 4355180666568580090, guid: cd034108d061fae4fa323a1968e30d11, type: 3}
   - {fileID: 5894979182433546639, guid: cd034108d061fae4fa323a1968e30d11, type: 3}
   - {fileID: -602204750, guid: 4e61743c906e95f4eadb5933bc3b1a40, type: 3}
-  - {fileID: 419607515, guid: ec4a5da99f4e71f4194b123cab946667, type: 3}
-  - {fileID: 1961500227, guid: c6de83af687004846a5e11cd5d09f021, type: 3}
   WeaponSprites:
   - {fileID: 710064921, guid: cd034108d061fae4fa323a1968e30d11, type: 3}
   - {fileID: 202172152, guid: cd034108d061fae4fa323a1968e30d11, type: 3}
@@ -24463,7 +24463,7 @@ Animator:
   m_GameObject: {fileID: 4525583160765292296}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d7613614cf9a3c1429e9a145526722dd, type: 2}
+  m_Controller: {fileID: 9100000, guid: 449f029bdf0f4c44b8a9af0eac12b0d2, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
         }
         instance = this;
         // calls all methodes in LoadState
+        // for at reset player state så skal de to nedestående kommenterets, spillet skal køres og så skal de nedestående udkommenteret igen.
+        // De to gør at player staten bliver husket fra sesion til sesion.
         SceneManager.sceneLoaded += LoadState;
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
