@@ -11,11 +11,15 @@ public class Player : Mover
     private bool isAlive = true;
     private float lastPlayed;
     private float playTime = 1.0f;
+
+
+    private Animator animator;
     [SerializeField]
     public AudioSource audioSource;
 
     protected override void Start()
     {
+        animator = GetComponent<Animator>();
         base.Start();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
@@ -44,7 +48,13 @@ public class Player : Mover
     {
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
-
+        if(x > 0  || y > 0 || x < 0 || y < 0)
+        {
+            animator.SetBool("Run", true);
+        }
+        else
+        { animator.SetBool("Run", false);
+        }
         if(isAlive)
             UpdateMoter(new Vector3(x, y, 0));
     }
