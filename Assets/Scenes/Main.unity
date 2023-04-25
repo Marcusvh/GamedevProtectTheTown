@@ -20785,6 +20785,9 @@ MonoBehaviour:
   PlayerSprites:
   - {fileID: 4355180666568580090, guid: cd034108d061fae4fa323a1968e30d11, type: 3}
   - {fileID: 5894979182433546639, guid: cd034108d061fae4fa323a1968e30d11, type: 3}
+  - {fileID: -602204750, guid: 4e61743c906e95f4eadb5933bc3b1a40, type: 3}
+  - {fileID: 419607515, guid: ec4a5da99f4e71f4194b123cab946667, type: 3}
+  - {fileID: 1961500227, guid: c6de83af687004846a5e11cd5d09f021, type: 3}
   WeaponSprites:
   - {fileID: 710064921, guid: cd034108d061fae4fa323a1968e30d11, type: 3}
   - {fileID: 202172152, guid: cd034108d061fae4fa323a1968e30d11, type: 3}
@@ -24311,6 +24314,22 @@ PrefabInstance:
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 4525583160765292300}
+    - target: {fileID: 4525583160451893949, guid: 64c4363d3050a8441b845b4e5b4314d5, type: 3}
+      propertyPath: newCtr.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525583160451893949, guid: 64c4363d3050a8441b845b4e5b4314d5, type: 3}
+      propertyPath: newCtr.Array.data[0]
+      value: 
+      objectReference: {fileID: 9100000, guid: e21549c44280b1f4bb41ffbb07dda2f4, type: 2}
+    - target: {fileID: 4525583160451893949, guid: 64c4363d3050a8441b845b4e5b4314d5, type: 3}
+      propertyPath: newCtr.Array.data[1]
+      value: 
+      objectReference: {fileID: 9100000, guid: 0ee60f77172a23c4396e94d591bc00ba, type: 2}
+    - target: {fileID: 4525583160451893949, guid: 64c4363d3050a8441b845b4e5b4314d5, type: 3}
+      propertyPath: newCtr.Array.data[2]
+      value: 
+      objectReference: {fileID: 9100000, guid: 5e20f44d87b9d5c469bfb8d8606670b3, type: 2}
     - target: {fileID: 4525583160451893950, guid: 64c4363d3050a8441b845b4e5b4314d5, type: 3}
       propertyPath: m_Name
       value: Player
@@ -24434,6 +24453,26 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &4525583160765292303
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4525583160765292296}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &9021911321959352909
 PrefabInstance:
   m_ObjectHideFlags: 0
